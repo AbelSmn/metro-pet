@@ -1,2 +1,2 @@
 # Metro Pet
-this is an emoticon pet
+Nothing here for now, im gonna rebuild this later
