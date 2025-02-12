@@ -3,31 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Windows Phone Metro Layout</title>
+  <title>Virtual Pet</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="metro-container">
-    <div class="tile large">
-      <div class="tile-content">Weather</div>
+  <div class="pet-container">
+    <div class="pet">
+      <div class="emoticon" id="emoticon">:-)</div>
+      <div class="emotion-bar">
+        <button class="emotion" id="happy" onclick="changeEmotion('happy')">Happy</button>
+        <button class="emotion" id="sad" onclick="changeEmotion('sad')">Sad</button>
+        <button class="emotion" id="bored" onclick="changeEmotion('bored')">Bored</button>
+        <button class="emotion" id="hungry" onclick="changeEmotion('hungry')">Hungry</button>
+      </div>
     </div>
-    <div class="tile small">
-      <div class="tile-content">News</div>
-    </div>
-    <div class="tile small">
-      <div class="tile-content">Calendar</div>
-    </div>
-    <div class="tile large">
-      <div class="tile-content">Music</div>
-    </div>
-    <div class="tile small">
-      <div class="tile-content">Photos</div>
-    </div>
-    <div class="tile small">
-      <div class="tile-content">Contacts</div>
+    <div class="options">
+      <button class="option" onclick="feed()">Feed</button>
+      <button class="option" onclick="giveWater()">Give Water</button>
+      <button class="option" onclick="giveToy()">Give Toy</button>
     </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
