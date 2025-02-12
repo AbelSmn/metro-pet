@@ -1,64 +1,74 @@
-const emoticon = document.getElementById('emoticon');
-const emotionBar = document.getElementById('emotion-bar');
-const emotionText = document.getElementById('emotion-text');
+let emoticon = document.getElementById('emoticon');
+let currentEmotionText = document.getElementById('current-emotion');
 
-// Load the stored emotion from localStorage
-let currentEmotion = localStorage.getItem('currentEmotion') || 'happy';
-updateEmotion(currentEmotion);
+let hungerBar = document.getElementById('hunger-bar');
+let funBar = document.getElementById('fun-bar');
+let thirstBar = document.getElementById('thirst-bar');
 
-// Function to change the emotion
-function changeEmotion(emotion) {
-  currentEmotion = emotion;
-  localStorage.setItem('currentEmotion', emotion);
-  updateEmotion(emotion);
+// Load previous values or set defaults
+let hunger = parseInt(localStorage.getItem('hunger')) || 100;
+let fun = parseInt(localStorage.getItem('fun')) || 100;
+let thirst = parseInt(localStorage.getItem('thirst')) || 100;
+
+updateBars();
+updateEmotion();
+
+// Decrease stats every 30-60 seconds
+setInterval(() => {
+  hunger = Math.max(0, hunger - 5);
+  fun = Math.max(0, fun - 5);
+  thirst = Math.max(0, thirst - 5);
+  
+  saveData();
+  updateBars();
+  updateEmotion();
+}, Math.floor(Math.random() * 30000) + 30000); // 30-60 sec
+
+function feed() {
+  hunger = Math.min(100, hunger + 30);
+  updateBars();
+  updateEmotion();
+  saveData();
 }
 
-// Update the display based on the current emotion
-function updateEmotion(emotion) {
-  switch (emotion) {
-    case 'happy':
-      emoticon.textContent = ':-)';
-      emotionText.textContent = 'Happy';
-      break;
-    case 'sad':
-      emoticon.textContent = ':-(';
-      emotionText.textContent = 'Sad';
-      break;
-    case 'bored':
-      emoticon.textContent = ':-/';
-      emotionText.textContent = 'Bored';
-      break;
-    case 'hungry':
-      emoticon.textContent = ':-o';
-      emotionText.textContent = 'Hungry';
-      break;
+function giveToy() {
+  fun = Math.min(100, fun + 30);
+  updateBars();
+  updateEmotion();
+  saveData();
+}
+
+function giveWater() {
+  thirst = Math.min(100, thirst + 30);
+  updateBars();
+  updateEmotion();
+  saveData();
+}
+
+function updateBars() {
+  hungerBar.style.width = `${hunger}%`;
+  funBar.style.width = `${fun}%`;
+  thirstBar.style.width = `${thirst}%`;
+}
+
+function updateEmotion() {
+  if (hunger <= 20) {
+    emoticon.textContent = ':-o';
+    currentEmotionText.textContent = 'Hungry';
+  } else if (thirst <= 20) {
+    emoticon.textContent = ':-(';
+    currentEmotionText.textContent = 'Thirsty';
+  } else if (fun <= 20) {
+    emoticon.textContent = ':-/';
+    currentEmotionText.textContent = 'Bored';
+  } else {
+    emoticon.textContent = ':-)';
+    currentEmotionText.textContent = 'Happy';
   }
 }
 
-// Feed the pet (sets it to happy)
-function feed() {
-  changeEmotion('happy');
-  alert('You fed your pet!');
+function saveData() {
+  localStorage.setItem('hunger', hunger);
+  localStorage.setItem('fun', fun);
+  localStorage.setItem('thirst', thirst);
 }
-
-// Give water to the pet (sets it to happy)
-function giveWater() {
-  changeEmotion('happy');
-  alert('You gave water to your pet!');
-}
-
-// Give a toy to the pet (sets it to bored)
-function giveToy() {
-  changeEmotion('bored');
-  alert('You gave a toy to your pet!');
-}
-
-// Randomly change the pet's emotion over time
-function randomEmotionChange() {
-  const emotions = ['hungry', 'sad', 'bored'];
-  const randomEmotion = emotions[Math.floor(Math.random() * emotions.length)];
-  changeEmotion(randomEmotion);
-}
-
-// Change the emotion randomly at random intervals
-setInterval(randomEmotionChange, Math.random() * 5000 + 5000); // Between 5 and 10 seconds
