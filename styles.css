@@ -1,67 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: black;
-  color: white;
-  font-family: 'Noto Sans', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
-}
-
-.pet-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.pet {
-  margin-bottom: 20px;
-}
-
-.emoticon {
-  font-size: 80px;
-}
-
-.emotion-bar {
-  width: 100%;
-  background-color: #0078d4;
-  padding: 15px 0;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-#current-emotion {
-  display: inline-block;
-}
-
-.options {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.option {
-  background-color: #0078d4;
-  color: white;
-  padding: 15px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 100px;
-}
-
-.option:hover {
-  background-color: #005fa3;
-}
+/* Title in the corner - No background */
 .top {
   position: fixed;
   top: 5px;
@@ -69,5 +6,57 @@ body {
   color: white;
   font-size: 16px;
   font-weight: bold;
-  z-index: 1000;
+  z-index: 1000; /* Keeps it above other elements */
+}
+
+/* Centered container */
+.pet-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* Emoticon */
+.emoticon {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+/* Emotion bar */
+.emotion-bar {
+  background-color: black;
+  color: white;
+  border: 4px solid white;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* Control buttons */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option {
+  background-color: black;
+  color: white;
+  border: 4px solid white;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-family: 'Noto Sans', sans-serif;
+  cursor: pointer;
+  width: 200px;
+  text-align: center;
+}
+
+.option:hover {
+  background-color: #333;
 }
