@@ -5,16 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Virtual Pet</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="pet-container">
     <div class="pet">
       <div class="emoticon" id="emoticon">:-)</div>
-      <div class="emotion-bar">
-        <button class="emotion" id="happy" onclick="changeEmotion('happy')">Happy</button>
-        <button class="emotion" id="sad" onclick="changeEmotion('sad')">Sad</button>
-        <button class="emotion" id="bored" onclick="changeEmotion('bored')">Bored</button>
-        <button class="emotion" id="hungry" onclick="changeEmotion('hungry')">Hungry</button>
+      <div class="emotion-bar" id="emotion-bar">
+        <span id="emotion-text">Happy</span>
       </div>
     </div>
     <div class="options">
