@@ -12,16 +12,16 @@
             background-color: #111;
             color: white;
             margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            height: 100vh;
             text-align: left;
             padding: 20px;
+            overflow: hidden;
         }
         .container {
             width: 100%;
             max-width: 480px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
         }
         h5 {
             padding: 0px;
@@ -32,8 +32,9 @@
         h1 {
             padding: 0px;
             font-weight: 350;
-            font-size: 2.5em;
+            font-size: 3em;
             text-transform: lowercase;
+            white-space: nowrap;
         }
     </style>
 </head>
