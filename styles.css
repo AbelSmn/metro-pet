@@ -1,5 +1,73 @@
-h1 {
-  font-size: 56px;
-  margin-bottom: 16px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Noto Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.pet-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pet {
+  margin-bottom: 20px;
+}
+
+.emoticon {
+  font-size: 80px;
+}
+
+.emotion-bar {
+  width: 100%;
+  background-color: #0078d4;
+  padding: 15px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#current-emotion {
+  display: inline-block;
+}
+
+.options {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.option {
+  background-color: #0078d4;
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100px;
+}
+
+.option:hover {
+  background-color: #005fa3;
+}
+.top {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 1000;
+}
