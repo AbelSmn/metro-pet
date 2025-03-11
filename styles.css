@@ -1,102 +1,73 @@
-/* Reset default margins and paddings */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Fullscreen mobile layout */
 body {
+  background-color: black;
+  color: white;
   font-family: 'Noto Sans', sans-serif;
-  background-color: #000; /* Full black background */
-  color: #fff;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 100vh; /* Fullscreen height */
-  width: 100vw; /* Full width */
-  overflow: hidden; /* Prevent scrolling */
-  position: relative;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
 }
 
-/* "METRO PET" title positioned at the top left */
-.title {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  font-size: 20px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-/* Pet container */
 .pet-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-grow: 1; /* Fills remaining screen space */
-  width: 90%;
-  max-width: 350px;
-  border: 8px solid #0078d7; /* Strong Metro-style border */
-  background-color: #000; /* Fully black background */
-  padding: 20px;
-  text-align: center;
 }
 
-/* Pet card */
 .pet {
-  background-color: #000; /* Pure black */
-  border: 8px solid #00bcf2; /* Bright cyan border */
-  padding: 20px;
-  width: 100%;
-  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Emoticon */
 .emoticon {
-  font-size: 72px; /* Increased size */
-  margin-bottom: 10px;
-  color: #fff; /* White emoticon */
+  font-size: 80px;
 }
 
-/* Emotion bar */
 .emotion-bar {
-  background-color: #0078d7; /* Solid blue background */
-  padding: 5px; /* Reduced padding */
-  font-size: 14px; /* Smaller font size */
+  width: 100%;
+  background-color: #0078d4;
+  padding: 15px 0;
+  font-size: 24px;
   font-weight: bold;
-  text-align: center;
-  color: white;
-  border: 8px solid #fff; /* White border for a blocky look */
-  width: 80%;
-  margin: auto;
 }
 
-/* Buttons container */
+#current-emotion {
+  display: inline-block;
+}
+
 .options {
   display: flex;
-  flex-direction: column; /* Stack buttons vertically */
   gap: 10px;
-  width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
-/* Metro-style buttons */
 .option {
-  background-color: #0078d7;
+  background-color: #0078d4;
   color: white;
-  border: 4px solid white; /* Metro-style sharp border */
-  padding: 12px;
-  font-size: 18px;
-  font-weight: bold;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
   cursor: pointer;
-  width: 100%;
-  text-align: center;
-  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  width: 100px;
 }
 
 .option:hover {
-  background-color: #005a9e;
+  background-color: #005fa3;
+}
+.top {
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 1000;
 }
