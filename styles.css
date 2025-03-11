@@ -1,73 +1,101 @@
+/* Reset default margins and paddings */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Fullscreen mobile layout */
 body {
-  background-color: black;
-  color: white;
   font-family: 'Noto Sans', sans-serif;
+  background-color: #000; /* Full black background */
+  color: #fff;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  text-align: center;
+  justify-content: center;
+  height: 100vh; /* Fullscreen height */
+  width: 100vw;  /* Full width */
+  overflow: hidden; /* Prevent scrolling */
 }
 
+/* Header bar */
+header.top {
+  background-color: #0078d7; /* Metro blue */
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Pet container */
 .pet-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.pet {
-  margin-bottom: 20px;
-}
-
-.emoticon {
-  font-size: 80px;
-}
-
-.emotion-bar {
+  flex-grow: 1; /* Fills remaining screen space */
   width: 100%;
-  background-color: #0078d4;
-  padding: 15px 0;
-  font-size: 24px;
+  max-width: 400px; /* Prevents elements from getting too wide */
+}
+
+/* Pet card */
+.pet {
+  background-color: #111; /* Darker card for contrast */
+  border: 2px solid #0078d7;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Emoticon */
+.emoticon {
+  font-size: 48px;
+  margin-bottom: 15px;
+  color: #00ff00; /* Green emoticon for visibility */
+}
+
+/* Emotion bar */
+.emotion-bar {
+  background-color: #222;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 18px;
   font-weight: bold;
+  text-align: center;
+  color: #fff;
 }
 
-#current-emotion {
-  display: inline-block;
-}
-
+/* Buttons container */
 .options {
   display: flex;
+  flex-direction: column; /* Stack buttons vertically */
   gap: 10px;
-  margin-top: 10px;
+  width: 90%;
+  max-width: 320px;
+  margin-top: 20px;
 }
 
+/* Metro-style buttons */
 .option {
-  background-color: #0078d4;
+  background-color: #0078d7;
   color: white;
-  padding: 15px;
-  font-size: 16px;
   border: none;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: 100px;
+  width: 100%;
+  text-align: center;
 }
 
 .option:hover {
-  background-color: #005fa3;
-}
-.top {
-  position: fixed;
-  top: 5px;
-  left: 5px;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  z-index: 1000;
+  background-color: #005a9e;
 }
