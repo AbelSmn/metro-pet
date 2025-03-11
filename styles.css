@@ -15,7 +15,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh; /* Fullscreen height */
-  width: 100vw;  /* Full width */
+  width: 100vw; /* Full width */
   overflow: hidden; /* Prevent scrolling */
 }
 
@@ -28,6 +28,7 @@ header.top {
   padding: 15px 0;
   font-size: 20px;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 /* Pet container */
@@ -37,38 +38,39 @@ header.top {
   align-items: center;
   justify-content: center;
   flex-grow: 1; /* Fills remaining screen space */
-  width: 100%;
-  max-width: 400px; /* Prevents elements from getting too wide */
+  width: 90%;
+  max-width: 350px;
+  border: 8px solid #0078d7; /* Strong Metro-style border */
+  background-color: #000; /* Fully black background */
+  padding: 20px;
+  text-align: center;
 }
 
 /* Pet card */
 .pet {
-  background-color: #111; /* Darker card for contrast */
-  border: 2px solid #0078d7;
-  border-radius: 8px;
+  background-color: #000; /* Pure black */
+  border: 8px solid #00bcf2; /* Bright cyan border */
   padding: 20px;
-  width: 90%;
-  max-width: 320px;
+  width: 100%;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Emoticon */
 .emoticon {
   font-size: 48px;
   margin-bottom: 15px;
-  color: #00ff00; /* Green emoticon for visibility */
+  color: #00ff00; /* Bright green emoticon */
 }
 
 /* Emotion bar */
 .emotion-bar {
-  background-color: #222;
-  border-radius: 4px;
+  background-color: #0078d7; /* Solid blue background */
   padding: 10px;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
-  color: #fff;
+  color: white;
+  border: 8px solid #fff; /* White border for a blocky look */
 }
 
 /* Buttons container */
@@ -76,26 +78,11 @@ header.top {
   display: flex;
   flex-direction: column; /* Stack buttons vertically */
   gap: 10px;
-  width: 90%;
-  max-width: 320px;
+  width: 100%;
   margin-top: 20px;
 }
 
 /* Metro-style buttons */
 .option {
   background-color: #0078d7;
-  color: white;
-  border: none;
-  padding: 12px;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  width: 100%;
-  text-align: center;
-}
-
-.option:hover {
-  background-color: #005a9e;
-}
+  color: white
