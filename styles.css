@@ -39,7 +39,7 @@ body {
 }
 
 #current-emotion {
-  display: inline-block;
+  display: none;
 }
 
 .options {
